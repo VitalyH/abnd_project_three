@@ -100,9 +100,9 @@ public class MainActivity extends AppCompatActivity {
 
         // First question check
         EditText inputText = findViewById(R.id.questionOneInput);
-        String questionOneUser = inputText.getText().toString();
-        if (questionOneUser.equals(questionOneCorrect)) {
-            showResult = showResult + 1;
+        String questionOneUser = inputText.getText().toString().trim();
+        if (questionOneUser.equalsIgnoreCase(questionOneCorrect)) {
+            showResult++;
         }
 
         // Second question
@@ -110,13 +110,8 @@ public class MainActivity extends AppCompatActivity {
         CheckBox tom = findViewById(R.id.tom);
         CheckBox john = findViewById(R.id.john);
         CheckBox marvolo = findViewById(R.id.marvolo);
-        if (tom.isChecked()) {
-            if (marvolo.isChecked()) {
-                showResult = showResult + 1;
-                if (john.isChecked()) {
-                    showResult = showResult - 1;
-                }
-            }
+        if (tom.isChecked() && marvolo.isChecked() && !john.isChecked()) {
+            showResult++;
         }
 
         // Third question
@@ -125,28 +120,21 @@ public class MainActivity extends AppCompatActivity {
         CheckBox liliana = findViewById(R.id.liliana);
         CheckBox george = findViewById(R.id.george);
         CheckBox james = findViewById(R.id.james);
-        if (lily.isChecked()) {
-            if (james.isChecked()) {
-                showResult = showResult + 1;
-                if (liliana.isChecked()) {
-                    showResult = showResult - 1;
-                } else if (george.isChecked()) {
-                    showResult = showResult - 1;
-                }
-            }
+        if (lily.isChecked() && james.isChecked() && !liliana.isChecked() && !george.isChecked()) {
+            showResult++;
         }
 
         // Fourth question
         // Correct answer: Minerva
         RadioButton minerva = findViewById(R.id.minerva);
         if (minerva.isChecked()) {
-            showResult = showResult + 1;
+            showResult++;
         }
         // Fifth question
         // Correct answer: Bellatrix Lestrange
         RadioButton bellatrix = findViewById(R.id.bellatrix);
         if (bellatrix.isChecked()) {
-            showResult = showResult + 1;
+            showResult++;
         }
 
         // Toast message with results

@@ -1,5 +1,7 @@
 Quiz App
 
+!!! See /Screenshots folder! !!!
+
 Task: to complete this project, you'll need to design a quiz layout and implement it in an app. The quiz can be about any topic of your choice, and you are encouraged to create one on a topic you find personally interesting.
 
 My comment: it's Harry Potter time! Extra functionality: floating "Reset" button. Tested on Nexus 5X (emulator, API 27) and Samsung Galaxy S4 mini (live, API 19).
